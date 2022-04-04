@@ -24,20 +24,36 @@ function generatePassword() {
   //prompt for length of password
   var passwordLength = window.prompt("Please enter the number of characters you want for your password.  It must be more than 8 but less than 20.");
 
-  //write code for if the user puts something not allowed
+  //code for if the user puts something not allowed
+    if (passwordLength < 8 || passwordLength > 20) {
+      window.alert("Please provide a number between 9 and 19.");
+      return generatePassword();
+    }
+  //code to confirm the number the user selected
+      window.alert("You have selected " + passwordLength + " characters.");
 
-  //write code to confirm the number the user selected
-    window.alert("You have selected " + passwordLength + " characters.");
+  //code to include different character types    
+
+  var numbers = window.confirm("Do you want numbers in your password?");
+
+  var lowerCases = window.confirm("Do you want lowercases in your password?");
+
+  var upperCases = window.confirm("Do you want uppercases in your password?");
+
+  var special = window.confirm("Do you want special characters in your password?");
+
+  //to make sure that at least one special character was selected
+
+    if (numbers == false & lowerCases == false & upperCases == false & special == false) {
+      window.alert("Please include either a number, lowercase, uppercase, or special character in your password.");
+      return generatePassword();
+    }
 
 
 
 }
 
-// selct which criteria to include
 
-//prompt for character types to include in password (whether or not to include lowercase, uppercase, numeric, and/or special characters)
-
-//input should be validated and at least one character type selected
 
 //when all prompts are answered a password is generated
 
