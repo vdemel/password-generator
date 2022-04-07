@@ -1,8 +1,11 @@
-// Assignment code here
+// Create list of special characters to be used
 const specialCharacters = "!@#$%^&*";
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
+
+// Add event listener to generate button
+generateBtn.addEventListener("click", writePassword);
 
 // Write password to the #password input
 function writePassword() {
@@ -12,10 +15,6 @@ function writePassword() {
   passwordText.value = password;
 
 }
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
 
 //series of prompts for password criteria
 
@@ -42,16 +41,16 @@ function generatePassword() {
 
   var special = window.confirm("Do you want special characters in your password?");
 
+  // require at least one speical character type
 
   var minimumCount = 0;
-
-
-  //to make sure that at least one special character was selected
-
+  
     if (numbers == false & lowerCases == false & upperCases == false & special == false) {
       window.alert("Please include either a number, lowercase, uppercase, or special character in your password.");
            
     }
+
+  //empty minimums for each character type 
 
   var minimumNumbers = "" ;
   var minimumLowerCases = "";
@@ -75,9 +74,10 @@ function generatePassword() {
 
     getSpecialCharacters: function() {
       return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-    },
+    }
   };
 
+  // verify which options from above were selected 
   if (numbers === true) {
     minimumNumbers = functionArray.getNumbers();
     minimumCount++;
@@ -98,8 +98,7 @@ function generatePassword() {
     minimumCount++
   }
 
-
-
+  // empty string variable for the for loop below
   var randomPasswordGenerated = "";
 
   for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) {
@@ -109,13 +108,15 @@ function generatePassword() {
     
   }
 
+  // to make sure characters get added to the password
+
   randomPasswordGenerated += minimumNumbers;
   randomPasswordGenerated += minimumLowerCases;
   randomPasswordGenerated += minimumUpperCases;
   randomPasswordGenerated += minimumSpecialCharacters;
 
 
-    return randomPasswordGenerated;
+  return randomPasswordGenerated;
 
 }
 
