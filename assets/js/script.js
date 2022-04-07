@@ -70,12 +70,12 @@ function generatePassword() {
     },
 
     getUpperCases: function() {
-      return String.fromCharCode(Math.floor(Math.random() *26 + 65));
+      return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
     },
 
     getSpecialCharacters: function() {
       return specialCharacters[Math.floor(Math.random() * specialCharacters.length)]
-    }
+    },
   };
 
   if (numbers === true) {
@@ -103,7 +103,7 @@ function generatePassword() {
   var randomPasswordGenerated = "";
 
   for (let i = 0; i < (parseInt(passwordLength) - minimumCount); i++) {
-    var randomNumberPicked = Math.floor(Math.random() * 4);
+    var randomNumberPicked = Math.floor(Math.random() * 10);
 
     randomPasswordGenerated += randomNumberPicked;
     
@@ -120,8 +120,4 @@ function generatePassword() {
 }
 
 
-
-//when all prompts are answered a password is generated
-
-//the password is either displayed in an alert of written to the page
 
