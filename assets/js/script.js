@@ -52,7 +52,7 @@ function generatePassword() {
 
   //empty minimums for each character type 
 
-  var minimumNumbers = "" ;
+  var minimumNumbers = "";
   var minimumLowerCases = "";
   var minimumUpperCases = "";
   var minimumSpecialCharacters = "";
@@ -114,7 +114,6 @@ function generatePassword() {
   randomPasswordGenerated += minimumLowerCases;
   randomPasswordGenerated += minimumUpperCases;
   randomPasswordGenerated += minimumSpecialCharacters;
-
 
   return randomPasswordGenerated;
 
